@@ -23,8 +23,8 @@ gulp.task('clean', function(){
 gulp.task('copy', ['clean'], function() {
   gulp.src('src/index.html')
   .pipe(gulp.dest('build/public/'));
-  gulp.src('src/libs/**')
-  .pipe(gulp.dest('build/public/libs/'))
+  gulp.src('lib/**')
+  .pipe(gulp.dest('build/public/lib/'))
   .pipe(connect.reload());
 });
 
@@ -42,9 +42,3 @@ gulp.task('watch', function () {
 gulp.task('build', ['clean', 'copy', 'uglify']);
 
 gulp.task('serve', ['connect', 'watch']);
-
-// Handle the error
-function errorHandler (error) {
-  console.log(error.toString());
-  this.emit('end');
-}

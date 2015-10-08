@@ -8,5 +8,6 @@
     "gulp-change": "~1.0.0",
     "gulp-uglify": "~1.4.1",
     "gulp-rename": "~1.2.2"
-  }
+  },
+  "dependencies": {}
 }

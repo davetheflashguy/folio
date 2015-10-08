@@ -1,4 +1,5 @@
-var app = angular.module('folioApp', ['ngMaterial']);
+var app = angular.module('folioApp', ['ui.router',
+                                      'ngMaterial']);
 
 app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
   console.log('App Ctrl');
