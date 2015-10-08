@@ -1,0 +1,31 @@
+{
+  "name": "folio",
+  "version": "0.0.0",
+  "homepage": "https://github.com/davetheflashguy/folio",
+  "authors": [
+    "Dave Collier <davetheflashguy@gmail.com>"
+  ],
+  "description": "Typescript Portfolio of Dave Collier",
+  "keywords": [
+    "Dave",
+    "Collier",
+    "davetheflashguy",
+    "TypeScript",
+    "Portfolio",
+    "Folio",
+    "Dave",
+    "C"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.6"
+  }
+}
