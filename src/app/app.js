@@ -1,10 +1,19 @@
 var app = angular.module('folioApp', ['ui.router',
-                                      'ngMaterial']);
+                                      'ngMaterial'])
 
-app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
-  console.log('App Ctrl');
-  $scope.toggleSidenav = function(menuId) {
-    $mdSidenav(menuId).toggle();
-  };
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/home');
+  $stateProvider
+  .state('home', {
+    url: '/home',
+    templateUrl: 'partials/home.html'
+  })
+  .state('folio', {
+    url: '/folio',
+    templateUrl: 'partials/folio.html'
+  })
+}]);
+
+app.controller('AppCtrl', ['$scope', function($scope){
 
 }]);

@@ -1,0 +1,24 @@
+<section ng-controller="NavCtrl" ng-init="init()">
+  <md-fab-toolbar md-open="demo.isOpen" count="demo.count"
+              md-direction="right">
+    <md-fab-trigger class="align-with-text">
+      <md-button aria-label="menu" class="md-fab md-primary">
+        <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-toolbar>
+      <md-fab-actions class="md-toolbar-tools">
+        <a ui-sref="home">
+          <md-button aria-label="label" class="md-icon-button">
+            <md-icon md-svg-src="assets/icons/ic_comment_24px.svg"></md-icon>
+          </md-button>
+        </a>
+        <a ui-sref="folio">
+          <md-button aria-label="label" class="md-icon-button">
+            <md-icon md-svg-src="assets/icons/ic_label_24px.svg"></md-icon>
+          </md-button>
+        </a>
+      </md-fab-actions>
+    </md-toolbar>
+  </md-fab-toolbar>
+</section>
