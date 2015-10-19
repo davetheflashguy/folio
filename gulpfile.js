@@ -4,6 +4,8 @@ var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
+var less = require('gulp-less');
+var path = require('path');
 
 gulp.task('uglify', ['clean'], function() {
   return gulp.src(['src/app/*.js','src/app/**/*.js'])
@@ -11,6 +13,14 @@ gulp.task('uglify', ['clean'], function() {
           .pipe(rename('app.min.js'))
           .pipe(uglify())
           .pipe(gulp.dest('build/public/'));
+});
+
+gulp.task('less', function () {
+  return gulp.src('src/assets/less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('./public/assets/css/'));
 });
 
 gulp.task('clean', function(){
