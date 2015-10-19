@@ -29,7 +29,7 @@ gulp.task('copy', ['clean'], function() {
   gulp.src('src/assets/**')
   .pipe(gulp.dest('build/public/assets/'))
   // libs
-  gulp.src('lib/**')
+  gulp.src('src/lib/**')
   .pipe(gulp.dest('build/public/lib/'))
 
   .pipe(connect.reload());

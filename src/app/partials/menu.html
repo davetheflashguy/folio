@@ -1,6 +1,6 @@
 <section ng-controller="NavCtrl" ng-init="init()">
-  <md-fab-toolbar md-open="demo.isOpen" count="demo.count"
-              md-direction="right">
+  <md-fab-toolbar md-open="navConfig.isOpen" count="navConfig.count"
+                  md-direction="{{navConfig.selectedDirection}}">
     <md-fab-trigger class="align-with-text">
       <md-button aria-label="menu" class="md-fab md-primary">
         <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>

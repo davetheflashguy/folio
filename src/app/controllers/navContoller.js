@@ -2,4 +2,10 @@ angular.module('folioApp').controller('NavCtrl', ['$scope', '$mdSidenav', functi
   $scope.init = function(){
     console.log("init");
   }
+
+  $scope.navConfig = {
+    isOpen: false,
+    count: 0,
+    selectedDirection: 'right'
+  };
 }]);
