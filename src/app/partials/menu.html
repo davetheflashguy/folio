@@ -1,6 +1,6 @@
-<section ng-controller="NavCtrl" ng-init="init()">
+<section class="menu">
   <md-fab-toolbar md-open="navConfig.isOpen" count="navConfig.count"
-                  md-direction="{{navConfig.selectedDirection}}">
+                  md-direction="{{navConfig.selectedDirection}}" class="menu">
     <md-fab-trigger class="align-with-text">
       <md-button aria-label="menu" class="md-fab md-primary">
         <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>
@@ -10,12 +10,17 @@
       <md-fab-actions class="md-toolbar-tools">
         <a ui-sref="home">
           <md-button aria-label="label" class="md-icon-button">
-            <md-icon md-svg-src="assets/icons/ic_comment_24px.svg"></md-icon>
+            <i class="material-icons">home</i>
           </md-button>
         </a>
         <a ui-sref="folio">
           <md-button aria-label="label" class="md-icon-button">
-            <md-icon md-svg-src="assets/icons/ic_label_24px.svg"></md-icon>
+            <i class="material-icons">assignment</i>
+          </md-button>
+        </a>
+        <a ng-click="showGridBottomSheet($event)">
+          <md-button aria-label="label" class="md-icon-button">
+            <i class="material-icons">email</i>
           </md-button>
         </a>
       </md-fab-actions>

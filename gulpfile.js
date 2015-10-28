@@ -5,7 +5,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 var less = require('gulp-less');
-var path = require('path');
+var cssmin = require('gulp-cssmin');
 
 gulp.task('uglify', ['clean'], function() {
   return gulp.src(['src/app/*.js','src/app/**/*.js'])
@@ -16,16 +16,22 @@ gulp.task('uglify', ['clean'], function() {
 });
 
 gulp.task('less', function () {
-  return gulp.src('src/assets/less/**/*.less')
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
-    }))
-    .pipe(gulp.dest('./public/assets/css/'));
+  return gulp.src('src/assets/less/*.less')
+         .pipe(less().on('error', function(err){
+           console.log(err)
+         }))
+         .pipe(cssmin().on('error', function(err){
+           console.log(err)
+         }))
+         .pipe(rename({suffix: '.min'}))
+         .pipe(gulp.dest('build/public/assets/css/'));
 });
 
 gulp.task('clean', function(){
   return gulp.src(['build/'], {read: false})
-    .pipe(clean({force: true}));
+    .pipe(clean({force: true}).on('error', function(err){
+      console.log(err)
+    }));
 });
 
 gulp.task('copy', ['clean'], function() {
@@ -42,7 +48,6 @@ gulp.task('copy', ['clean'], function() {
   gulp.src('src/lib/**')
   .pipe(gulp.dest('build/public/lib/'))
 
-  .pipe(connect.reload());
 });
 
 gulp.task('connect', function() {
@@ -56,6 +61,10 @@ gulp.task('watch', function () {
   gulp.watch(['src/*html', 'src/**/*.js'], ['build']);
 });
 
-gulp.task('build', ['clean', 'copy', 'uglify']);
+gulp.task('reload', function(){
+  connect.reload();
+});
+
+gulp.task('build', ['clean', 'copy', 'less', 'uglify', 'reload']);
 
 gulp.task('serve', ['connect', 'watch']);

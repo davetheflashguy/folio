@@ -27,6 +27,7 @@
     "angular-material": "~0.11.2",
     "angular-animate": "~1.4.7",
     "mdi": "~1.2.65",
-    "components-font-awesome": "~4.4.0"
+    "components-font-awesome": "~4.4.0",
+    "material-design-icons": "~2.0.0"
   }
 }
