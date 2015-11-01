@@ -10,7 +10,11 @@
     <meta name="viewport" content="initial-scale=1">
   </head>
   <body>
-      <div ng-include src="'partials/menu.html'"></div>
+      <div layout="row" flex>
+        <div layout="column" flex id="content">
+          <div ng-include src="'common/navigation/view.html'"></div>
+        </div>
+      </div>
       <div layout="row" flex>
         <div layout="column" flex id="content">
           <md-content layout="column" flex class="md-padding">

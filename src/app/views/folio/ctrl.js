@@ -1,3 +1,3 @@
 angular.module('folioApp').controller('FolioCtrl', [function(){
-  console.log("shammy");
+  console.log("folio controller");
 }]);

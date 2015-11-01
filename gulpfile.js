@@ -38,19 +38,18 @@ gulp.task('copy', ['clean'], function() {
   // index
   gulp.src('src/index.html')
   .pipe(gulp.dest('build/public/'));
-  // partials
-  gulp.src('src/app/partials/*.html')
-  .pipe(gulp.dest('build/public/partials/'))
   // assets
   gulp.src('src/assets/**')
   .pipe(gulp.dest('build/public/assets/'))
   // views
   gulp.src('src/app/views/**')
   .pipe(gulp.dest('build/public/views'))
+  // common
+  gulp.src('src/app/common/**')
+  .pipe(gulp.dest('build/public/common'))
   // libs
   gulp.src('src/lib/**')
-  .pipe(gulp.dest('build/public/lib/'))
-
+  .pipe(gulp.dest('build/public/lib/'));
 });
 
 gulp.task('connect', function() {
