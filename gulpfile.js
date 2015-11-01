@@ -44,6 +44,9 @@ gulp.task('copy', ['clean'], function() {
   // assets
   gulp.src('src/assets/**')
   .pipe(gulp.dest('build/public/assets/'))
+  // views
+  gulp.src('src/app/views/**')
+  .pipe(gulp.dest('build/public/views'))
   // libs
   gulp.src('src/lib/**')
   .pipe(gulp.dest('build/public/lib/'))
