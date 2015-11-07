@@ -4,7 +4,7 @@
     $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'views/home/view.html',
+      templateUrl: '/partials/views/home/view.html',
       controller: 'HomeCtrl'
     })
   }

@@ -6,6 +6,8 @@ var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 var less = require('gulp-less');
 var cssmin = require('gulp-cssmin');
+var ngHtml2Js = require("gulp-ng-html2js");
+var minifyHtml = require("gulp-minify-html");
 
 gulp.task('uglify', ['clean'], function() {
   return gulp.src(['src/app/**/*.js'])
@@ -15,8 +17,8 @@ gulp.task('uglify', ['clean'], function() {
           .pipe(gulp.dest('build/public/'));
 });
 
-gulp.task('less', ['clean'],function () {
-  return gulp.src('src/assets/less/*.less')
+gulp.task('less', ['clean'], function () {
+  return gulp.src('src/assets/less/demo.less')
          .pipe(less().on('error', function(err){
            console.log(err)
          }))
@@ -25,6 +27,22 @@ gulp.task('less', ['clean'],function () {
          }))
          .pipe(rename({suffix: '.min'}))
          .pipe(gulp.dest('build/public/assets/css/'));
+});
+
+gulp.task('ngHtml2Js', ['clean'],function(){
+  gulp.src("src/app/**/*.html")
+    .pipe(minifyHtml({
+        empty: true,
+        spare: true,
+        quotes: true
+    }))
+    .pipe(ngHtml2Js({
+        moduleName: "folioPartials",
+        prefix: "/partials/"
+    }))
+    .pipe(concat("partials.min.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest("build/public/partials/"));
 });
 
 gulp.task('clean', function(){
@@ -41,11 +59,8 @@ gulp.task('copy', ['clean'], function() {
   // assets
   gulp.src('src/assets/**')
   .pipe(gulp.dest('build/public/assets/'))
-  // views
-  gulp.src('src/app/views/**')
-  .pipe(gulp.dest('build/public/views'))
   // common
-  gulp.src('src/app/common/**')
+  gulp.src('src/app/common/**/*.html')
   .pipe(gulp.dest('build/public/common'))
   // libs
   gulp.src('src/lib/**')
@@ -67,6 +82,6 @@ gulp.task('reload', ['clean','copy', 'less', 'uglify'],function(){
   connect.reload();
 });
 
-gulp.task('build', ['copy', 'less', 'uglify', 'reload']);
+gulp.task('build', ['copy', 'less', 'ngHtml2Js', 'uglify', 'reload']);
 
 gulp.task('serve', ['connect']);

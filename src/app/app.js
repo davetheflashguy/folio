@@ -2,6 +2,7 @@
   'use-strict';
   angular.module('folioApp',[
     'ui.router',
-    'ngMaterial'
+    'ngMaterial',
+    'folioPartials'
   ]);
 })(window.angular);

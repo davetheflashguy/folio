@@ -3,7 +3,7 @@
     $stateProvider
     .state('folio', {
       url: '/folio',
-      templateUrl: 'views/folio/view.html',
+      templateUrl: '/partials/views/folio/view.html',
       controller: 'FolioCtrl'
     })
   }
