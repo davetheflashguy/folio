@@ -28,7 +28,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('clean', function(){
-  return gulp.src(['build/'], {read: false})
+  return gulp.src(['build/'], {read: true})
     .pipe(clean({force: true}).on('error', function(err){
       console.log(err)
     }));
@@ -67,6 +67,6 @@ gulp.task('reload', function(){
   connect.reload();
 });
 
-gulp.task('build', ['clean', 'copy', 'less', 'uglify', 'reload']);
+gulp.task('build', ['copy', 'less', 'uglify', 'reload']);
 
 gulp.task('serve', ['connect', 'watch']);

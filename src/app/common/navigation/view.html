@@ -1,29 +1,25 @@
-<section class="menu" ng-controller="NavigationCtrl">
-  <md-fab-toolbar md-open="navConfig.isOpen" count="navConfig.count"
-                  md-direction="{{navConfig.selectedDirection}}">
-    <md-fab-trigger class="align-with-text">
-      <md-button aria-label="menu" class="md-fab md-primary">
-        <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>
-      </md-button>
-    </md-fab-trigger>
-    <md-toolbar>
-      <md-fab-actions class="md-toolbar-tools">
-        <a ui-sref="home">
-          <md-button aria-label="label" class="md-icon-button">
-            <i class="material-icons">home</i>
+<div ng-controller="NavigationCtrl as navCtrl" layout="column" ng-cloak="" class="fabSpeedDialnavCtrlBasicUsage" ng-app="MyApp">
+  <md-content class="md-padding" layout="column">
+    <div class="lock-size" layout="row" layout-align="left center">
+      <md-fab-speed-dial md-open="navCtrl.isOpen" md-direction="{{navCtrl.selectedDirection}}" ng-class="navCtrl.selectedMode" class="nav-speed-dial">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-primary">
+            <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>
           </md-button>
-        </a>
-        <a ui-sref="folio">
-          <md-button aria-label="label" class="md-icon-button">
-            <i class="material-icons">assignment</i>
-          </md-button>
-        </a>
-        <a ng-click="showGridBottomSheet($event)">
-          <md-button aria-label="label" class="md-icon-button">
-            <i class="material-icons">email</i>
-          </md-button>
-        </a>
-      </md-fab-actions>
-    </md-toolbar>
-  </md-fab-toolbar>
-</section>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <a ui-sref="home">
+            <md-button aria-label="Home" class="md-fab md-raised md-mini">
+              <md-icon><i class="material-icons">home</i></md-icon>
+            </md-button>
+          </a>
+          <a ui-sref="folio">
+            <md-button aria-label="Portfolio" class="md-fab md-raised md-mini">
+              <md-icon><i class="material-icons">assignment</i></md-icon>
+            </md-button>
+          </a>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+    </div>
+  </md-content>
+</div>
