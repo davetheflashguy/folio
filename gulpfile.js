@@ -8,14 +8,14 @@ var less = require('gulp-less');
 var cssmin = require('gulp-cssmin');
 
 gulp.task('uglify', ['clean'], function() {
-  return gulp.src(['src/app/*.js','src/app/**/*.js'])
+  return gulp.src(['src/app/**/*.js'])
           .pipe(concat('app.js'))
           .pipe(rename('app.min.js'))
           .pipe(uglify())
           .pipe(gulp.dest('build/public/'));
 });
 
-gulp.task('less', function () {
+gulp.task('less', ['clean'],function () {
   return gulp.src('src/assets/less/*.less')
          .pipe(less().on('error', function(err){
            console.log(err)
@@ -28,7 +28,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('clean', function(){
-  return gulp.src(['build/'], {read: true})
+  return gulp.src(['build/'], {read: false})
     .pipe(clean({force: true}).on('error', function(err){
       console.log(err)
     }));
@@ -60,13 +60,13 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['src/*html', 'src/**/*.js'], ['build']);
+  gulp.watch(['src/**/*'], ['build']);
 });
 
-gulp.task('reload', function(){
+gulp.task('reload', ['clean','copy', 'less', 'uglify'],function(){
   connect.reload();
 });
 
 gulp.task('build', ['copy', 'less', 'uglify', 'reload']);
 
-gulp.task('serve', ['connect', 'watch']);
+gulp.task('serve', ['connect']);
