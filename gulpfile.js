@@ -60,7 +60,7 @@ gulp.task('copy', ['clean'], function() {
   gulp.src('src/assets/**')
   .pipe(gulp.dest('build/public/assets/'))
   // common
-  gulp.src('src/app/common/**/*.html')
+  gulp.src(['src/app/common/**/*.html','src/app/common/**/*.json'])
   .pipe(gulp.dest('build/public/common'))
   // libs
   gulp.src('src/lib/**')
