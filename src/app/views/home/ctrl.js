@@ -3,7 +3,6 @@
     var promise = HomeService.getData();
         promise.then(function(data) {
           $scope.data = data;
-          console.log($scope.data);
         });
   }]);
 })(window.angular);
