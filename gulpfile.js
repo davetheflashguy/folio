@@ -10,7 +10,7 @@ var ngHtml2Js = require("gulp-ng-html2js");
 var minifyHtml = require("gulp-minify-html");
 
 gulp.task('uglify', ['clean'], function() {
-  return gulp.src(['src/app/**/*.js'])
+  return gulp.src('src/app/**/*.js')
           .pipe(concat('app.js'))
           .pipe(rename('app.min.js'))
           .pipe(uglify())
