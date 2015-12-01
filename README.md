@@ -1,6 +1,6 @@
 folio
 ==========
-
+[![Build Status](https://travis-ci.org/davetheflashguy/folio.svg?branch=master)](https://travis-ci.org/davetheflashguy/folio)
 ## Synopsis
 
 Online portfolio of Developer, Dave Collier
@@ -23,5 +23,5 @@ Basic installation outputs: http://davecollierconsulting.com/dev/index.html#/hom
 * git clone https://github.com/davetheflashguy/folio.git
 * bower install
 * npm install
-* gulp 
+* gulp
 * gulp-serve
