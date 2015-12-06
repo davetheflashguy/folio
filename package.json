@@ -13,7 +13,13 @@
     "path": "~0.12.7",
     "gulp-minify-css": "~1.2.1",
     "gulp-ng-html2js": "~0.2.0",
-    "gulp-minify-html": "~1.0.4"
+    "gulp-minify-html": "~1.0.4",
+    "phantomjs": "~1.9.19",
+    "jasmine-core": "~2.3.4",
+    "karma": "~0.13.15",
+    "karma-jasmine": "~0.3.6",
+    "karma-chrome-launcher": "~0.2.1",
+    "gulp-ignore": "~2.0.1"
   },
   "dependencies": {}
 }

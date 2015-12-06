@@ -8,6 +8,18 @@ var less = require('gulp-less');
 var cssmin = require('gulp-cssmin');
 var ngHtml2Js = require("gulp-ng-html2js");
 var minifyHtml = require("gulp-minify-html");
+var Server = require('karma').Server;
+var gulpIgnore = require('gulp-ignore');
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: require('path').resolve('karma.conf.js'),
+    singleRun: true
+  }, done).start();
+});
 
 gulp.task('uglify', ['clean'], function() {
   return gulp.src('src/app/**/*.js')
@@ -78,10 +90,10 @@ gulp.task('watch', function () {
   gulp.watch(['src/**/*'], ['build']);
 });
 
-gulp.task('reload', ['clean','copy', 'less', 'uglify'],function(){
+gulp.task('reload', ['clean','copy', 'less', 'uglify','test'],function(){
   connect.reload();
 });
 
-gulp.task('build', ['copy', 'less', 'ngHtml2Js', 'uglify', 'reload']);
+gulp.task('build', ['copy', 'less', 'ngHtml2Js', 'uglify', 'reload', 'test']);
 
 gulp.task('serve', ['connect']);
