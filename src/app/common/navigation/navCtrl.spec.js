@@ -18,5 +18,14 @@ describe('NavigationCtrl', function() {
     it('the default state is closed', function() {
       expect($scope.options.isOpen).toEqual(false);
     });
+
+    it('the default selectedMode mode is md-fling', function() {
+      expect($scope.options.selectedMode).toEqual('md-fling');
+    });
+
+    it('the default selectedDirection mode is left', function() {
+      expect($scope.options.selectedDirection).toEqual('left');
+    });
+
   });
 });
