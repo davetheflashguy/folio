@@ -10,7 +10,6 @@ module.exports = function(config) {
       'src/lib/angular-material/angular-material.min.js',
       'src/lib/angular-ui-router/release/angular-ui-router.min.js',
       'src/app/**/*.js',
-      'tests/**/*.spec.js',
       'build/public/partials/partials.min.js'
     ]
   });

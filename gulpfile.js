@@ -22,7 +22,7 @@ gulp.task('test', function (done) {
 });
 
 gulp.task('uglify', ['clean'], function() {
-  return gulp.src('src/app/**/*.js')
+  return gulp.src(['src/app/**/*.js','!src/app/**/*.spec.js'])
           .pipe(concat('app.js'))
           .pipe(rename('app.min.js'))
           .pipe(uglify())
@@ -94,6 +94,6 @@ gulp.task('reload', ['clean','copy', 'less', 'uglify','test'],function(){
   connect.reload();
 });
 
-gulp.task('build', ['copy', 'less', 'ngHtml2Js', 'uglify', 'reload', 'test']);
+gulp.task('build', ['copy', 'less', 'ngHtml2Js', 'uglify', 'reload']);
 
 gulp.task('serve', ['connect']);
