@@ -94,6 +94,6 @@ gulp.task('reload', ['clean','copy', 'less', 'uglify','test'],function(){
   connect.reload();
 });
 
-gulp.task('build', ['copy', 'less', 'ngHtml2Js', 'uglify', 'reload']);
+gulp.task('build', ['copy', 'less', 'ngHtml2Js', 'uglify', 'reload', 'test']);
 
 gulp.task('serve', ['connect']);
