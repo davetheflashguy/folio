@@ -1,6 +1,7 @@
 folio
 ==========
 [![Build Status](https://travis-ci.org/davetheflashguy/folio.svg?branch=master)](https://travis-ci.org/davetheflashguy/folio)
+[![Coverage Status](https://coveralls.io/repos/davetheflashguy/folio/badge.svg?branch=master&service=github)](https://coveralls.io/github/davetheflashguy/folio?branch=master)
 ## Synopsis
 
 Online portfolio of Developer, Dave Collier
