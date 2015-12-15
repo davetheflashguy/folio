@@ -1,7 +1,11 @@
 (function (angular) {
   angular.module('folioApp').controller('NavigationCtrl', ['$scope', function($scope){
-    $scope.selectedMode = 'md-fling';
-    $scope.isOpen = true;
-    $scope.selectedDirection = 'left';
+    this.topDirections = ['left', 'up'];
+    this.bottomDirections = ['down', 'right'];
+    this.isOpen = false;
+    this.availableModes = ['md-fling', 'md-scale'];
+    this.selectedMode = 'md-fling';
+    this.availableDirections = ['up', 'down', 'left', 'right'];
+    this.selectedDirection = 'left';
   }])
 })(window.angular);
