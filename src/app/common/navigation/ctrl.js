@@ -1,9 +1,7 @@
 (function (angular) {
   angular.module('folioApp').controller('NavigationCtrl', ['$scope', function($scope){
-    $scope.options = {
-      isOpen : false,
-      selectedMode : 'md-fling',
-      selectedDirection : 'left'
-    }
-  }]);
+    $scope.selectedMode = 'md-fling';
+    $scope.isOpen = true;
+    $scope.selectedDirection = 'left';
+  }])
 })(window.angular);
