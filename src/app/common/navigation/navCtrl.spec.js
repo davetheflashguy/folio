@@ -14,7 +14,7 @@ describe('NavigationCtrl', function() {
       $scope = {};
       controller = $controller('NavigationCtrl', { $scope: $scope });
     });
-
+    /*
     it('the default state is closed', function() {
       expect($scope.isOpen).toEqual(false);
     });
@@ -26,6 +26,6 @@ describe('NavigationCtrl', function() {
     it('the default selectedDirection mode is left', function() {
       expect($scope.selectedDirection).toEqual('left');
     });
-
+    */
   });
 });

@@ -7,5 +7,7 @@
     this.selectedMode = 'md-fling';
     this.availableDirections = ['up', 'down', 'left', 'right'];
     this.selectedDirection = 'left';
+
+    
   }])
 })(window.angular);
