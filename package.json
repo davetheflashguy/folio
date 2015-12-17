@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node app",
-    "postinstall": "gulp default"
+    "postinstall": "gulp build"
   },
   "devDependencies": {},
   "dependencies": {
