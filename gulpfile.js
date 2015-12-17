@@ -104,6 +104,10 @@ gulp.task('reload', ['clean','copy', 'less', 'uglify'],function(){
   connect.reload();
 });
 
+gulp.task("heroku:production", function(){
+    console.log('hello'); // the task does not need to do anything.
+});
+
 gulp.task('build', ['copy',
                     'less',
                     'ngHtml2Js',
