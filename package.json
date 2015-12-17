@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "node app",
+    "postinstall": "gulp default"
+  },
   "devDependencies": {},
   "dependencies": {
     "gulp": "~3.9.0",
