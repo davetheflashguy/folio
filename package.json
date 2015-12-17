@@ -27,7 +27,7 @@
     "gulp-if": "~2.0.0"
   },
   "scripts": {
-    "start": "node app",
-    "postinstall": "gulp default"
+    "build": "gulp build",
+    "start": "node app.js"
   }
 }
