@@ -1,5 +1,7 @@
 {
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-cssmin": "~0.1.7"
+  },
   "dependencies": {
     "gulp": "~3.9.0",
     "gulp-copy": "0.0.2",
