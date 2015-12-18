@@ -113,7 +113,7 @@ gulp.task('build', ['copy',
                     'less',
                     'ngHtml2Js',
                     'uglify',
-                    'reload'
+                    'serve'
                    ]);
 
 gulp.task('serve', ['connect']);
