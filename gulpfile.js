@@ -92,6 +92,7 @@ gulp.task('copy', ['clean'], function() {
 gulp.task('connect', function() {
   connect.server({
     root: dest,
+    port: Number(process.env.PORT || 8080),
     livereload: true
   });
 });
