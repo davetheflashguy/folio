@@ -29,7 +29,7 @@
     "bower": "~1.7.1"
   },
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp buildHeroku",
     "start": "node app.js",
     "postinstall": "./node_modules/bower/bin/bower install"
   }

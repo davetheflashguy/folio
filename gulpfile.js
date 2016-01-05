@@ -109,11 +109,17 @@ gulp.task("heroku:production", function(){
     console.log('hello'); // the task does not need to do anything.
 });
 
-gulp.task('build', ['copy',
+gulp.task('buildHeroku', ['copy',
                     'less',
                     'ngHtml2Js',
                     'uglify',
                     'serve'
+                   ]);
+
+gulp.task('build', ['copy',
+                    'less',
+                    'ngHtml2Js',
+                    'uglify',
                    ]);
 
 gulp.task('serve', ['connect']);
