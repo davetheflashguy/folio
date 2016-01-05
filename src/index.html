@@ -10,12 +10,12 @@
     <meta name="viewport" content="initial-scale=1">
   </head>
   <body>
-      <div layout="row" flex>
+      <div layout="row" flex layout-padding>
         <div layout="column" flex id="content">
           <div ng-include src="'/partials/common/navigation/view.html'"></div>
         </div>
       </div>
-      <div layout="row" flex>
+      <div layout="row" flex layout-padding>
         <div layout="column" flex id="content">
           <md-content layout="column" flex class="md-padding">
             <div ui-view></div>
