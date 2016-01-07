@@ -1,68 +1,19 @@
 <h3>Portfolio</h4>
-  <div class="gridListdemoBasicUsage">
-  <md-grid-list
-          md-cols-sm="1"  md-cols-md="1" md-cols-lg="2" md-cols-xl="3" md-cols-gt-md="3"
-          md-row-height-gt-sm="1:1"
-          md-gutter="12px" md-gutter-gt-sm="8px" >
-      <md-grid-tile class="gray" md-rowspan="1">
+  <div class="folioGrid">
+  <md-grid-list md-cols-sm="1"
+                md-cols-md="1"
+                md-cols-lg="2"
+                md-cols-xl="3"
+                md-cols-gt-md="3"
+                md-row-height-gt-sm="1:1"
+                md-gutter="12px"
+                md-gutter-gt-sm="8px">
+      <md-grid-tile ng-class="gray"
+                    md-rowspan="1"
+                    ng-repeat="item in data.items">
         <md-grid-tile-footer>
-          <h3>#1: (3r x 2c)</h3>
+          <h3>{{item.displayName}}</h3>
         </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="green" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#2: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="yellow" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#3: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="gray" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#1: (3r x 2c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="green" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#2: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="yellow" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#3: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="gray" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#1: (3r x 2c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="green" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#2: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="yellow" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#3: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="gray" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#1: (3r x 2c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="green" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#2: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
-      <md-grid-tile class="yellow" md-rowspan="1">
-        <md-grid-tile-footer>
-          <h3>#3: (1r x 1c)</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
+      </md-grid-tile> 
     </md-grid-list>
   </div>
