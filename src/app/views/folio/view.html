@@ -1,20 +1,25 @@
-<h3>Portfolio</h4>
-  <div class="folioGrid" style="height:800px;">
-  <md-grid-list md-cols-xs="1"
-                md-cols-gt-xs="1"
-                md-cols-sm="2"
-                md-cols-gt-sm="2"
-                md-cols-md="2"
-                md-cols-gt-md="2"
-                md-cols-lg="3"
-                md-cols-gt-lg="4"
-                md-cols-xl="6"
-                md-gutter="1em" md-row-height="4:3">
-      <md-grid-tile class="gray"
-                    ng-repeat="item in data.items">
-        <md-grid-tile-footer>
-          <h3>{{item.displayName}}</h3>
-        </md-grid-tile-footer>
-      </md-grid-tile>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h3>Portfolio</h3>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <div class="folioGrid">
+    <md-grid-list md-cols-xs="1"
+                  md-cols-gt-xs="1"
+                  md-cols-sm="2"
+                  md-cols-gt-sm="2"
+                  md-cols-md="2"
+                  md-cols-gt-md="2"
+                  md-cols-lg="3"
+                  md-cols-gt-lg="4"
+                  md-cols-xl="6"
+                  md-gutter="1em" md-row-height="4:3">
+        <md-grid-tile class="gray"
+                      ng-repeat="item in data.items">
+          <md-grid-tile-footer>
+            <h3>{{item.displayName}}</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
     </md-grid-list>
   </div>
