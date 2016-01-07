@@ -3,27 +3,28 @@
       <h3>Portfolio</h3>
       <span flex></span>
       <md-button>
-        Filter Option 1
+        By Category
       </md-button>
       <md-button>
-        Filter Option 2
+        By Tag
       </md-button>
       <md-button>
-        Filter Option 3
+        By Date
       </md-button>
     </div>
   </md-toolbar>
-  <div class="folioGrid">
-    <md-grid-list md-cols-xs="1"
-                  md-cols-gt-xs="1"
-                  md-cols-sm="1"
-                  md-cols-gt-sm="1"
-                  md-cols-md="2"
-                  md-cols-gt-md="2"
-                  md-cols-lg="3"
-                  md-cols-gt-lg="4"
-                  md-cols-xl="6"
-                  md-gutter="1em" md-row-height="4:3">
+  <md-grid-list md-cols-xs="1"
+                md-cols-gt-xs="1"
+                md-cols-sm="1"
+                md-cols-gt-sm="1"
+                md-cols-md="2"
+                md-cols-gt-md="2"
+                md-cols-lg="3"
+                md-cols-gt-lg="4"
+                md-cols-xl="6"
+                md-gutter="1em"
+                md-row-height="4:3"
+                class="folioGrid">
         <md-grid-tile class="gray"
                       ng-repeat="item in data.items">
           <md-grid-tile-footer>
@@ -31,4 +32,3 @@
           </md-grid-tile-footer>
         </md-grid-tile>
     </md-grid-list>
-  </div>

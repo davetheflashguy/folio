@@ -8,6 +8,7 @@
       "logo":"",
       "start":null,
       "end":null,
+      "tags":[],
       "class":"gray"
     },
     {
@@ -17,7 +18,9 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"dcc",
@@ -26,7 +29,20 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
+    },
+    {
+      "shortName":"barcap",
+      "displayName":"Barclays",
+      "sector":"Investment Banking",
+      "category":"Financial Services",
+      "logo":"",
+      "start":null,
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"tr",
@@ -35,7 +51,9 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"dcc",
@@ -44,7 +62,20 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
+    },
+    {
+      "shortName":"barcap",
+      "displayName":"Barclays",
+      "sector":"Investment Banking",
+      "category":"Financial Services",
+      "logo":"",
+      "start":null,
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"tr",
@@ -53,7 +84,9 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"dcc",
@@ -62,7 +95,20 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
+    },
+    {
+      "shortName":"barcap",
+      "displayName":"Barclays",
+      "sector":"Investment Banking",
+      "category":"Financial Services",
+      "logo":"",
+      "start":null,
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"tr",
@@ -71,7 +117,9 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"dcc",
@@ -80,7 +128,20 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
+    },
+    {
+      "shortName":"barcap",
+      "displayName":"Barclays",
+      "sector":"Investment Banking",
+      "category":"Financial Services",
+      "logo":"",
+      "start":null,
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"tr",
@@ -89,7 +150,9 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"dcc",
@@ -98,7 +161,20 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
+    },
+    {
+      "shortName":"barcap",
+      "displayName":"Barclays",
+      "sector":"Investment Banking",
+      "category":"Financial Services",
+      "logo":"",
+      "start":null,
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"tr",
@@ -107,7 +183,9 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
     },
     {
       "shortName":"dcc",
@@ -116,133 +194,9 @@
       "category":"Financial Services",
       "logo":"",
       "start":null,
-      "end":null
-    },
-    {
-      "shortName":"tr",
-      "displayName":"Thompson Reuters",
-      "sector":"Tax & Accounting",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"dcc",
-      "displayName":"Dave Collier Consulting, LLC",
-      "sector":"Consulting Services",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"tr",
-      "displayName":"Thompson Reuters",
-      "sector":"Tax & Accounting",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"dcc",
-      "displayName":"Dave Collier Consulting, LLC",
-      "sector":"Consulting Services",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"tr",
-      "displayName":"Thompson Reuters",
-      "sector":"Tax & Accounting",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"dcc",
-      "displayName":"Dave Collier Consulting, LLC",
-      "sector":"Consulting Services",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"tr",
-      "displayName":"Thompson Reuters",
-      "sector":"Tax & Accounting",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"dcc",
-      "displayName":"Dave Collier Consulting, LLC",
-      "sector":"Consulting Services",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"tr",
-      "displayName":"Thompson Reuters",
-      "sector":"Tax & Accounting",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"dcc",
-      "displayName":"Dave Collier Consulting, LLC",
-      "sector":"Consulting Services",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"tr",
-      "displayName":"Thompson Reuters",
-      "sector":"Tax & Accounting",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"dcc",
-      "displayName":"Dave Collier Consulting, LLC",
-      "sector":"Consulting Services",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"tr",
-      "displayName":"Thompson Reuters",
-      "sector":"Tax & Accounting",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
-    },
-    {
-      "shortName":"dcc",
-      "displayName":"Dave Collier Consulting, LLC",
-      "sector":"Consulting Services",
-      "category":"Financial Services",
-      "logo":"",
-      "start":null,
-      "end":null
+      "end":null,
+      "tags":[],
+      "class":"gray"
     }
   ]
 }
