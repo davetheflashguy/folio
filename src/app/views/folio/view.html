@@ -26,8 +26,7 @@
                 md-row-height="4:3"
                 class="folioGrid">
         <md-grid-tile class="gray"
-                      ng-repeat="item in data.items">
-        <img src={{item.logo}} />
+                      ng-repeat="item in data.items | orderBy:'-endDate'">
           <md-grid-tile-footer>
             <h3>{{item.displayName}}</h3>
           </md-grid-tile-footer>
