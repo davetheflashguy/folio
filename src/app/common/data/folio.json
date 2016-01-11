@@ -6,31 +6,31 @@
       "sector":"Investment Banking",
       "category":"Financial Services",
       "logo":"assets/img/logos/barclays.png",
-      "startDate":1417410000,
+      "startDate":1417392000,
       "endDate":null,
-      "tags":[],
+      "tags":["UI", "UX", "Java", "JavaScript", "HTML5", "CSS3"],
       "class":"gray"
     },
     {
       "shortName":"tr",
       "displayName":"Thompson Reuters",
       "sector":"Tax & Accounting",
-      "category":"Financial Services",
+      "category":"Media",
       "logo":"assets/img/logos/tr.png",
-      "startDate":1406865600,
-      "endDate":1417410000,
-      "tags":[],
+      "startDate":1406851200,
+      "endDate":1417392000,
+      "tags":["UI", "UX", "JavaScript", "HTML5", "CSS3"],
       "class":"gray"
     },
     {
       "shortName":"dcc",
       "displayName":"Dave Collier Consulting, LLC",
       "sector":"Consulting Services",
-      "category":"Financial Services",
+      "category":"Consulting",
       "logo":"assets/img/logos/dcc.png",
-      "startDate":1317441600,
-      "endDate":1409544000,
-      "tags":[],
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "PHP", "mySQL", "JavaScript", "HTML5", "CSS3"],
       "class":"gray"
     }
   ]
