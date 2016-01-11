@@ -1,22 +1,15 @@
 (function (angular) {
   angular.module('folioApp').controller('FolioCtrl', ['$scope', 'FolioService', function($scope, FolioService){
+
     var promise = FolioService.getData();
         promise.then(function(data) {
           $scope.data = data;
+          $scope.selectedCategory = "";
+          $scope.categories = FolioService.getUniqueCategories().sort();
+          $scope.tags = FolioService.getUniqueTags().sort();
+          $scope.years = FolioService.getUniqueYears().sort().reverse();
+          console.log(FolioService.getUniqueCategories().sort());
         });
-
-    $scope.getUniqueCategories = function(){
-      return FolioService.getUniqueCategories().sort();
-    }
-
-    $scope.getUniqueTags = function(){
-      return FolioService.getUniqueTags().sort();
-    }
-
-    $scope.getUniqueYears = function(){
-      return FolioService.getUniqueYears().sort();
-      return FolioService.getUniqueYears().sort().reverse();
-    }
 
   }]);
 })(window.angular);
