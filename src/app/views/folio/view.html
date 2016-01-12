@@ -10,13 +10,25 @@
       </md-select>
       -->
       <md-menu>
-        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
-          category
+        <md-button aria-label="Open phone interactions menu" ng-click="openMenu($mdOpenMenu, $event)">
+          By Category
         </md-button>
-        <md-menu-content width="4">
-          <p>hello</p>
+        <md-menu-content width="2">
+          <md-content class="md-padding" layout="column">
+            <md-chips ng-model="categories" md-autocomplete-snap="" md-require-match="true">
+          <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item" placeholder="Search for a category" md-autoselect>
+            <span md-highlight-text="searchText" md-highlight-flags="^i">{{item}}</span>
+          </md-autocomplete>
+          <md-chip-template>
+            <span>
+              <strong>{{$chip}}</strong>
+            </span>
+          </md-chip-template>
+        </md-chips>
+          <br/>
         </md-menu-content>
       </md-menu>
+
       <md-button>
         By Tag
       </md-button>
