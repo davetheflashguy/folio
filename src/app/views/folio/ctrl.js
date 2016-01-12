@@ -11,5 +11,11 @@
           console.log(FolioService.getUniqueCategories().sort());
         });
 
+        var originatorEv;
+        $scope.openMenu = function($mdOpenMenu, ev) {
+          originatorEv = ev;
+          $mdOpenMenu(ev);
+        };
+
   }]);
 })(window.angular);
