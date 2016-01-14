@@ -2,28 +2,21 @@
     <div class="md-toolbar-tools">
       <h3>Portfolio</h3>
       <span flex></span>
-      <!--
-      <md-select ng-model="selectedCategory">
-        <md-option ng-repeat="category in categories track by $index" value="{{category}}">
-          {{category}}
-        </md-option>
-      </md-select>
-      -->
       <md-menu>
         <md-button aria-label="Open phone interactions menu" ng-click="openMenu($mdOpenMenu, $event)">
           By Category
         </md-button>
         <md-menu-content width="2">
           <md-content class="md-padding" layout="column">
+            <p>vegetables: {{vegetables}}</p>
             <h2 class="md-title">Use <code>md-autocomplete</code>  to build an ordered set of chips.</h2>
               <md-chips ng-model="selectedVegetables" md-autocomplete-snap="" md-require-match="true">
-                <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item.name" placeholder="Search for a vegetable" md-autoselect>
-                  <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}} :: {{item.type}}</span>
+                <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item" placeholder="Search for a vegetable" md-autoselect>
+                  <span md-highlight-text="searchText" md-highlight-flags="^i">{{item}}</span>
                 </md-autocomplete>
                 <md-chip-template>
                   <span>
-                    <strong>{{$chip.name}}</strong>
-                    <em>({{$chip.type}})</em>
+                    <strong>{{$chip}}</strong>
                   </span>
                 </md-chip-template>
               </md-chips>

@@ -59,24 +59,25 @@
       $mdOpenMenu(ev);
     };
 
-    var self = $scope;
+    function init() {
+      $scope.vegetables = loadVegetables();
+    }
 
-    self.readonly = false;
-    self.selectedItem = null;
-    self.searchText = null;
-    self.querySearch = querySearch;
-    self.vegetables = loadVegetables();
-    console.log(self.vegetables);
-    self.selectedVegetables = [];
-    self.numberChips = [];
-    self.numberChips2 = [];
-    self.numberBuffer = '';
+    var promise = FolioService.getData();
+        promise.then(function(data) {
+          $scope.data = data;
+          $scope.selectedCategory = "";
+          //$scope.vegetables = FolioService.getUniqueCategories().sort();
+          $scope.tags = FolioService.getUniqueTags().sort();
+          $scope.years = FolioService.getUniqueYears().sort().reverse();
+          init();
+        });
 
     /**
      * Search for vegetables.
      */
     function querySearch (query) {
-      var results = query ? self.vegetables.filter(createFilterFor(query)) : [];
+      var results = query ? $scope.vegetables.filter(createFilterFor(query)) : [];
       return results;
     }
 
@@ -87,8 +88,7 @@
       var lowercaseQuery = angular.lowercase(query);
 
       return function filterFn(vegetable) {
-        return (vegetable._lowername.indexOf(lowercaseQuery) === 0) ||
-            (vegetable._lowertype.indexOf(lowercaseQuery) === 0);
+        return (vegetable.indexOf(lowercaseQuery) === 0)
       };
 
     }
@@ -117,11 +117,20 @@
         }
       ];
 
-      return veggies.map(function (veg) {
-        veg._lowername = veg.name.toLowerCase();
-        veg._lowertype = veg.type.toLowerCase();
-        return veg;
+      var cats = FolioService.getUniqueCategories().sort();
+      $scope.readonly = false;
+      $scope.selectedItem = null;
+      $scope.searchText = null;
+      $scope.querySearch = querySearch;
+      $scope.selectedVegetables = [];
+      $scope.numberChips = [];
+      $scope.numberChips2 = [];
+      $scope.numberBuffer = '';
+      return cats.map(function (cat) {
+        cat = cat.toLowerCase();
+        return cat;
       });
+
     }
 
   }]);
