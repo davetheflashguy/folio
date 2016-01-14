@@ -15,7 +15,7 @@
         </md-button>
         <md-menu-content width="2">
           <md-content class="md-padding" layout="column">
-            <md-chips ng-model="categories" md-autocomplete-snap="" md-require-match="true">
+            <md-chips ng-model="selectedCategories" md-autocomplete-snap="" md-require-match="true">
           <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item" placeholder="Search for a category" md-autoselect>
             <span md-highlight-text="searchText" md-highlight-flags="^i">{{item}}</span>
           </md-autocomplete>
