@@ -2,9 +2,15 @@
   angular.module('folioApp').controller('FolioCtrl', ['$scope', '$timeout', '$q', 'FolioService', function($scope, $timeout, $q, FolioService){
 
     var originatorEv;
-    $scope.openMenu = function($mdOpenMenu, ev) {
-      originatorEv = ev;
-      $mdOpenMenu(ev);
+    var context;
+
+    $scope.openMenu = function($mdOpenMenu, $ev, $context) {
+      if ($context == 'categories') {
+        context = $scope.categories;
+      }
+      console.log(context, ' .. ');
+      originatorEv = $ev;
+      $mdOpenMenu($ev);
     };
 
     function init() {
@@ -21,19 +27,19 @@
     /**
      * Search for categories.
      */
-    function querySearch (query) {
-      var results = query ? $scope.categories.filter(createFilterFor(query)) : [];
+    function querySearch (_query, _context) {
+      var results = _query ? context.filter(createFilterFor(_query)) : [];
       return results;
     }
 
     /**
      * Create filter function for a query string
      */
-    function createFilterFor(query) {
-      var lowercaseQuery = angular.lowercase(query);
+    function createFilterFor(_query) {
+      var lowercaseQuery = angular.lowercase(_query);
 
-      return function filterFn(category) {
-        return (category.indexOf(lowercaseQuery) === 0)
+      return function filterFn(_phrase) {
+        return (_phrase.indexOf(lowercaseQuery) === 0)
       };
 
     }
@@ -48,11 +54,14 @@
       $scope.querySearch = querySearch;
       $scope.selectedCategories = [];
 
-      return FolioService.getUniqueCategories().sort().map(function (cat) {
-        cat = cat.toLowerCase();
-        return cat;
-      });
-      
+      console.log(context, ' ? ');
+      //if (context == 'categories') { // todo: rework this, its a mess
+        return FolioService.getUniqueCategories().sort().map(function (cat) {
+          cat = cat.toLowerCase();
+          return cat;
+        });
+      //}
+
     }
 
   }]);
