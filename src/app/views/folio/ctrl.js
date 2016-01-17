@@ -28,12 +28,15 @@
       if ($context == 'categories') {
         $scope.filters = loadFolioCategories();
         $scope.selectedCategories = $scope.filters;
+        store.set('categories', JSON.stringify({categories: $scope.selectedCategories}));
       } else if ($context == 'tags') {
         $scope.filters = loadFolioTags();
         $scope.selectedTags = $scope.filters;
+        store.set('tags', JSON.stringify({tags: $scope.selectedTags}));
       } else if ($context == 'years') {
         $scope.filters = loadFolioYears();
         $scope.selectedYears = $scope.filters;
+        store.set('years', JSON.stringify({years: $scope.selectedYears}));
       }
       console.log($scope.filters, ' .. ');
       originatorEv = $ev;
@@ -54,10 +57,6 @@
     }
 
     function loadFolioCategories() {
-      if(store.get('categories') == null){
-        store.set('categories', JSON.stringify({categories: FolioService.getUniqueCategories().sort()}));
-      };
-
       return FolioService.getUniqueCategories().sort().map(function (cat) {
         cat = cat.toLowerCase();
         return cat;
