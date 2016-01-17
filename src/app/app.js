@@ -3,6 +3,7 @@
   angular.module('folioApp',[
     'ui.router',
     'ngMaterial',
-    'folioPartials'
+    'folioPartials',
+    'angular-storage'
   ]);
 })(window.angular);

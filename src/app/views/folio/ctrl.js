@@ -1,10 +1,22 @@
 (function (angular) {
-  angular.module('folioApp').controller('FolioCtrl', ['$scope', '$timeout', '$q', 'FolioService', function($scope, $timeout, $q, FolioService){
+  angular.module('folioApp').controller('FolioCtrl', ['$scope', '$timeout', '$q', 'FolioService','store', function($scope, $timeout, $q, FolioService, store){
 
     var originatorEv;
     var context;
     $scope.readonly = false;
     $scope.querySearch = querySearch;
+
+    $scope.selectedCategoryItem = null;
+    $scope.selectedCategoryText = null;
+    $scope.selectedCategories = [];
+
+    $scope.selectedTagItem = null;
+    $scope.selectedTagText = null;
+    $scope.selectedTags = [];
+
+    $scope.selectedYearItem = null;
+    $scope.selectedYearText = null;
+    $scope.selectedYears = [];
 
     var promise = FolioService.getData();
         promise.then(function(data) {
@@ -15,27 +27,24 @@
     $scope.openMenu = function($mdOpenMenu, $ev, $context) {
       if ($context == 'categories') {
         $scope.filters = loadFolioCategories();
+        $scope.selectedCategories = $scope.filters;
       } else if ($context == 'tags') {
         $scope.filters = loadFolioTags();
+        $scope.selectedTags = $scope.filters;
       } else if ($context == 'years') {
         $scope.filters = loadFolioYears();
+        $scope.selectedYears = $scope.filters;
       }
       console.log($scope.filters, ' .. ');
       originatorEv = $ev;
       $mdOpenMenu($ev);
     };
 
-    /**
-     * Search for categories.
-     */
     function querySearch (_query) {
       var results = _query ? $scope.filters.filter(createFilterFor(_query)) : [];
       return results;
     }
 
-    /**
-     * Create filter function for a query string
-     */
     function createFilterFor(_query) {
       var lowercaseQuery = angular.lowercase(_query);
 
@@ -45,9 +54,9 @@
     }
 
     function loadFolioCategories() {
-      $scope.selectedCategoryItem = null;
-      $scope.selectedCategoryText = null;
-      $scope.selectedCategories = [];
+      if(store.get('categories') == null){
+        store.set('categories', JSON.stringify({categories: FolioService.getUniqueCategories().sort()}));
+      };
 
       return FolioService.getUniqueCategories().sort().map(function (cat) {
         cat = cat.toLowerCase();
@@ -56,10 +65,6 @@
     }
 
     function loadFolioTags() {
-      $scope.selectedTagItem = null;
-      $scope.selectedTagText = null;
-      $scope.selectedTags = [];
-
       return FolioService.getUniqueTags().sort().map(function (tag) {
         tag = tag.toLowerCase();
         return tag;
@@ -67,10 +72,6 @@
     }
 
     function loadFolioYears() {
-      $scope.selectedYearItem = null;
-      $scope.selectedYearText = null;
-      $scope.selectedYears = [];
-
       return FolioService.getUniqueYears().sort().reverse().map(function (year) {
         year = year.toLowerCase();
         return year;
