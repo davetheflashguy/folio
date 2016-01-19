@@ -28,7 +28,6 @@
       if ($context == 'categories') {
         $scope.filters = loadFolioCategories();
         $scope.selectedCategories = $scope.filters;
-        store.set('categories', JSON.stringify({selectedCategories: $scope.selectedCategories}));
       } else if ($context == 'tags') {
         $scope.filters = loadFolioTags();
         $scope.selectedTags = $scope.filters;
@@ -56,6 +55,7 @@
     }
 
     function loadFolioCategories() {
+      store.set('categories', JSON.stringify({selectedCategories: FolioService.getUniqueCategories().sort()}));
       return FolioService.getUniqueCategories().sort().map(function (cat) {
         cat = cat.toLowerCase();
         return cat;
@@ -63,7 +63,15 @@
     }
 
     $scope.removeTagChip = function(_chip, _context) {
-      console.log('remove chip: ', _chip, , ' from: ', _context);
+      //console.log('remove chip: ', _chip, , ' from: ', _context);
+      if (_context == 'categories'){
+        console.log($scope.selectedCategories);
+        var index = $scope.selectedCategories.indexOf(_chip);
+        $scope.selectedCategories.splice(index, 1);
+        store.set('categories', JSON.stringify({selectedCategories: $scope.selectedCategories}));
+        console.log($scope.selectedCategories);
+      }
+
     }
 
     function loadFolioTags() {
