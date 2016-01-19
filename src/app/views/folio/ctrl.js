@@ -28,17 +28,16 @@
       if ($context == 'categories') {
         $scope.filters = loadFolioCategories();
         $scope.selectedCategories = $scope.filters;
-        store.set('categories', JSON.stringify({categories: $scope.selectedCategories}));
+        store.set('categories', JSON.stringify({selectedCategories: $scope.selectedCategories}));
       } else if ($context == 'tags') {
         $scope.filters = loadFolioTags();
         $scope.selectedTags = $scope.filters;
-        store.set('tags', JSON.stringify({tags: $scope.selectedTags}));
+        store.set('tags', JSON.stringify({selectedTags: $scope.selectedTags}));
       } else if ($context == 'years') {
         $scope.filters = loadFolioYears();
         $scope.selectedYears = $scope.filters;
-        store.set('years', JSON.stringify({years: $scope.selectedYears}));
+        store.set('years', JSON.stringify({selectedYears: $scope.selectedYears}));
       }
-      console.log($scope.filters, ' .. ');
       originatorEv = $ev;
       $mdOpenMenu($ev);
     };
@@ -61,6 +60,10 @@
         cat = cat.toLowerCase();
         return cat;
       });
+    }
+
+    $scope.removeTagChip = function(_chip, _context) {
+      console.log('remove chip: ', _chip, , ' from: ', _context);
     }
 
     function loadFolioTags() {

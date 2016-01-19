@@ -8,7 +8,7 @@
         </md-button>
         <md-menu-content width="2">
           <md-content class="md-padding" layout="column">
-              <md-chips ng-model="selectedCategories" md-autocomplete-snap="" md-require-match="true">
+              <md-chips ng-model="selectedCategories" md-autocomplete-snap="" md-require-match="true" md-on-remove="removeTagChip($chip, 'categories');">
                 <md-autocomplete md-selected-item="selectedCategoryItem" md-search-text="selectedCategoryText" md-items="item in querySearch(selectedCategoryText, 'categories')" md-item-text="item" placeholder="Search for a category" md-autoselect>
                   <span md-highlight-text="selectedCategoryText" md-highlight-flags="^i">{{item}}</span>
                 </md-autocomplete>
