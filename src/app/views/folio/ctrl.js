@@ -26,7 +26,13 @@
 
     $scope.openMenu = function($mdOpenMenu, $ev, $context) {
       if ($context == 'categories') {
-        $scope.filters = loadFolioCategories();
+        if (store.get('categories') == null) {
+          $scope.filters = loadFolioCategories();
+        }
+        else {
+          var obj = JSON.parse(store.get('categories'));
+          $scope.filters = obj.selectedCategories;
+        }
         $scope.selectedCategories = $scope.filters;
       } else if ($context == 'tags') {
         $scope.filters = loadFolioTags();
@@ -67,9 +73,10 @@
       if (_context == 'categories'){
         console.log($scope.selectedCategories);
         var index = $scope.selectedCategories.indexOf(_chip);
+        console.log('index: ', index);
         $scope.selectedCategories.splice(index, 1);
         store.set('categories', JSON.stringify({selectedCategories: $scope.selectedCategories}));
-        console.log($scope.selectedCategories);
+        //console.log($scope.selectedCategories);
       }
 
     }
