@@ -24,16 +24,26 @@
           $scope.selectedCategory = "";
         });
 
+    $scope.$watch('selectedCategories', function(newValue, oldValue) {
+      if(angular.equals(newValue, oldValue)){
+          return;
+      }
+      else {
+        if (newValue.length > 0) {
+          //console.log('newValue: ', newValue);
+          FolioService.setSelectedCategories(newValue);
+        }
+        if (oldValue.length > 0) {
+          //console.log('oldValue: ', oldValue);
+        }
+      }
+    });
+
     $scope.openMenu = function($mdOpenMenu, $ev, $context) {
       if ($context == 'categories') {
-        if (store.get('categories') == null) {
-          $scope.filters = loadFolioCategories();
-        }
-        else {
-          var obj = JSON.parse(store.get('categories'));
-          $scope.filters = obj.selectedCategories;
-        }
-        $scope.selectedCategories = $scope.filters;
+        $scope.selectedCategories = FolioService.getSelectedCategories();
+        $scope.filters = FolioService.getUniqueCategories();        
+        //console.log('$scope.selectedCategories: ', $scope.selectedCategories)
       } else if ($context == 'tags') {
         $scope.filters = loadFolioTags();
         $scope.selectedTags = $scope.filters;
@@ -60,39 +70,25 @@
       };
     }
 
-    function loadFolioCategories() {
-      store.set('categories', JSON.stringify({selectedCategories: FolioService.getUniqueCategories().sort()}));
-      return FolioService.getUniqueCategories().sort().map(function (cat) {
-        cat = cat.toLowerCase();
-        return cat;
-      });
-    }
-
     $scope.removeTagChip = function(_chip, _context) {
       //console.log('remove chip: ', _chip, , ' from: ', _context);
       if (_context == 'categories'){
         console.log($scope.selectedCategories);
         var index = $scope.selectedCategories.indexOf(_chip);
-        console.log('index: ', index);
-        $scope.selectedCategories.splice(index, 1);
+        console.log('$scope.selectedCategories: ', $scope.selectedCategories);
+        //$scope.selectedCategories.splice(index, 1);
         store.set('categories', JSON.stringify({selectedCategories: $scope.selectedCategories}));
         //console.log($scope.selectedCategories);
       }
 
     }
 
-    function loadFolioTags() {
-      return FolioService.getUniqueTags().sort().map(function (tag) {
-        tag = tag.toLowerCase();
-        return tag;
-      });
+    function loadFolioTags(){
+      return FolioService.getUniqueTags();
     }
 
-    function loadFolioYears() {
-      return FolioService.getUniqueYears().sort().reverse().map(function (year) {
-        year = year.toLowerCase();
-        return year;
-      });
+    function loadFolioYears(){
+      return FolioService.getUniqueYears();
     }
 
   }]);

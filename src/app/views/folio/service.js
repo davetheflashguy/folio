@@ -1,8 +1,12 @@
 (function (angular) {
-  angular.module('folioApp').service('FolioService', ['$q', '$timeout', '$http', function ($q, $timeout, $http) {
+  angular.module('folioApp').service('FolioService', ['$q', '$timeout', '$http', 'store', function ($q, $timeout, $http, store) {
+    // uniques
     var uniqueCategories = [];
     var uniqueTags = [];
     var uniqueYears = [];
+    // selected
+    var selectedCategories = [];
+
     this.getData = function() {
       var deferred = $q.defer();
       $http.get('common/data/folio.json')
@@ -64,17 +68,54 @@
       return deferred.promise;
     };
 
+
+    //== Unique Filter Getters
     this.getUniqueCategories = function(){
-      return uniqueCategories;
+      return uniqueCategories.sort().map(function (cat) {
+        cat = cat.toLowerCase();
+        return cat;
+      });
     }
 
     this.getUniqueTags = function(){
-      return uniqueTags;
+      return uniqueTags.sort().map(function (tag) {
+        tag = tag.toLowerCase();
+        return tag;
+      });
     }
 
     this.getUniqueYears = function(){
-      return uniqueYears;
+      return uniqueYears.sort().reverse().map(function (year) {
+        year = year.toLowerCase();
+        return year;
+      });
     }
 
+    //== Selected Filter Setters / Getters
+    this.setSelectedCategories = function(categories) {
+      this.selectedCategories = categories;
+      store.set('categories', JSON.stringify({selectedCategories: this.selectedCategories}));
+      //console.log('setSelectedCategories: ', categories);
+    }
+
+    this.getSelectedCategories = function() {
+      var arr = [];
+      var cats = JSON.parse(store.get('categories'));
+      if (store.get('categories') !== null) {
+        var categories = cats.selectedCategories;
+        if (categories.length > 0) {
+          arr = categories;
+        }
+        else {
+          arr = this.getUniqueCategories();
+        }
+      }
+      else {
+        arr = this.getUniqueCategories();
+      }
+
+      console.log('this.getUniqueCategories: ', arr);
+      return arr;
+    }
  }]);
 })(window.angular);
