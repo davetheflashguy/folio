@@ -93,6 +93,7 @@
 
     //== Selected Filter Setters / Getters
     this.setSelectedCategories = function(categories) {
+      console.log('setSelectedCategories: ', categories);
       this.selectedCategories = categories;
       store.set('categories', JSON.stringify({selectedCategories: this.selectedCategories}));
       //console.log('setSelectedCategories: ', categories);

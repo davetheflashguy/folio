@@ -24,17 +24,13 @@
           $scope.selectedCategory = "";
         });
 
-    $scope.$watch('selectedCategories', function(newValue, oldValue) {
+    $scope.$watchCollection('selectedCategories', function(newValue, oldValue) {
       if(angular.equals(newValue, oldValue)){
           return;
       }
       else {
         if (newValue.length > 0) {
-          //console.log('newValue: ', newValue);
           FolioService.setSelectedCategories(newValue);
-        }
-        if (oldValue.length > 0) {
-          //console.log('oldValue: ', oldValue);
         }
       }
     });
@@ -42,8 +38,7 @@
     $scope.openMenu = function($mdOpenMenu, $ev, $context) {
       if ($context == 'categories') {
         $scope.selectedCategories = FolioService.getSelectedCategories();
-        $scope.filters = FolioService.getUniqueCategories();        
-        //console.log('$scope.selectedCategories: ', $scope.selectedCategories)
+        $scope.filters = FolioService.getUniqueCategories();
       } else if ($context == 'tags') {
         $scope.filters = loadFolioTags();
         $scope.selectedTags = $scope.filters;
@@ -68,19 +63,6 @@
       return function filterFn(_phrase) {
         return (_phrase.indexOf(lowercaseQuery) === 0)
       };
-    }
-
-    $scope.removeTagChip = function(_chip, _context) {
-      //console.log('remove chip: ', _chip, , ' from: ', _context);
-      if (_context == 'categories'){
-        console.log($scope.selectedCategories);
-        var index = $scope.selectedCategories.indexOf(_chip);
-        console.log('$scope.selectedCategories: ', $scope.selectedCategories);
-        //$scope.selectedCategories.splice(index, 1);
-        store.set('categories', JSON.stringify({selectedCategories: $scope.selectedCategories}));
-        //console.log($scope.selectedCategories);
-      }
-
     }
 
     function loadFolioTags(){
