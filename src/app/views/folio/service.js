@@ -6,6 +6,8 @@
     var uniqueYears = [];
     // selected
     var selectedCategories = [];
+    var selectedTags = [];
+    var selectedYears = [];
 
     this.getData = function() {
       var deferred = $q.defer();
@@ -93,16 +95,14 @@
 
     //== Selected Filter Setters / Getters
     this.setSelectedCategories = function(categories) {
-      console.log('setSelectedCategories: ', categories);
       this.selectedCategories = categories;
       store.set('categories', JSON.stringify({selectedCategories: this.selectedCategories}));
-      //console.log('setSelectedCategories: ', categories);
     }
 
     this.getSelectedCategories = function() {
       var arr = [];
-      var cats = JSON.parse(store.get('categories'));
       if (store.get('categories') !== null) {
+        var cats = JSON.parse(store.get('categories'));
         var categories = cats.selectedCategories;
         if (categories.length > 0) {
           arr = categories;
@@ -115,7 +115,54 @@
         arr = this.getUniqueCategories();
       }
 
-      console.log('this.getUniqueCategories: ', arr);
+      return arr;
+    }
+
+    this.setSelectedTags = function(tags) {
+      this.selectedTags = tags;
+      store.set('tags', JSON.stringify({selectedTags: this.selectedTags}));
+    }
+
+    this.getSelectedTags = function() {
+      var arr = [];
+      if (store.get('tags') !== null) {
+        var t = JSON.parse(store.get('tags'));
+        var tags = t.selectedTags;
+        if (tags.length > 0) {
+          arr = tags;
+        }
+        else {
+          arr = this.getUniqueTags();
+        }
+      }
+      else {
+        arr = this.getUniqueTags();
+      }
+
+      return arr;
+    }
+
+    this.setSelectedYears = function(years) {
+      this.selectedYears = years;
+      store.set('years', JSON.stringify({selectedYears: this.selectedYears}));
+    }
+
+    this.getSelectedYears = function() {
+      var arr = [];
+      if (store.get('years') !== null) {
+        var y = JSON.parse(store.get('years'));
+        var years = y.selectedYears;
+        if (years.length > 0) {
+          arr = years;
+        }
+        else {
+          arr = this.getUniqueYears();
+        }
+      }
+      else {
+        arr = this.getUniqueYears();
+      }
+
       return arr;
     }
  }]);

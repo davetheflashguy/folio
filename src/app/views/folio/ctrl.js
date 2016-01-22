@@ -35,18 +35,38 @@
       }
     });
 
+    $scope.$watchCollection('selectedTags', function(newValue, oldValue) {
+      if(angular.equals(newValue, oldValue)){
+          return;
+      }
+      else {
+        if (newValue.length > 0) {
+          FolioService.setSelectedTags(newValue);
+        }
+      }
+    });
+
+    $scope.$watchCollection('selectedYears', function(newValue, oldValue) {
+      if(angular.equals(newValue, oldValue)){
+          return;
+      }
+      else {
+        if (newValue.length > 0) {
+          FolioService.setSelectedYears(newValue);
+        }
+      }
+    });
+
     $scope.openMenu = function($mdOpenMenu, $ev, $context) {
       if ($context == 'categories') {
         $scope.selectedCategories = FolioService.getSelectedCategories();
         $scope.filters = FolioService.getUniqueCategories();
       } else if ($context == 'tags') {
-        $scope.filters = loadFolioTags();
-        $scope.selectedTags = $scope.filters;
-        store.set('tags', JSON.stringify({selectedTags: $scope.selectedTags}));
+        $scope.selectedTags = FolioService.getSelectedTags();
+        $scope.filters = FolioService.getUniqueTags();
       } else if ($context == 'years') {
-        $scope.filters = loadFolioYears();
-        $scope.selectedYears = $scope.filters;
-        store.set('years', JSON.stringify({selectedYears: $scope.selectedYears}));
+        $scope.selectedYears = FolioService.getSelectedYears()
+        $scope.filters = FolioService.getUniqueYears();
       }
       originatorEv = $ev;
       $mdOpenMenu($ev);
@@ -63,14 +83,6 @@
       return function filterFn(_phrase) {
         return (_phrase.indexOf(lowercaseQuery) === 0)
       };
-    }
-
-    function loadFolioTags(){
-      return FolioService.getUniqueTags();
-    }
-
-    function loadFolioYears(){
-      return FolioService.getUniqueYears();
     }
 
   }]);
