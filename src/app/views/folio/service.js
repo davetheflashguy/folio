@@ -60,13 +60,11 @@
               uniqueYears.push(moment(endDate).format("YYYY"));
             }
           }
-
         });
       })
       .error(function(data, status) {
         console.error('Data error', status, data);
       });
-
       return deferred.promise;
     };
 

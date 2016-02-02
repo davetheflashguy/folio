@@ -21,7 +21,11 @@
     var promise = FolioService.getData();
         promise.then(function(data) {
           $scope.data = data;
-          $scope.selectedCategory = "";
+          if (JSON.parse(store.get('categories'))) {
+            var selectedCategories = JSON.parse(store.get('categories')).selectedCategories;
+            FolioService.setSelectedCategories(selectedCategories);
+            filterFolioItemsByCategory(selectedCategories);
+          }
         });
 
     $scope.$watchCollection('selectedCategories', function(newValue, oldValue) {
@@ -31,6 +35,7 @@
       else {
         if (newValue.length > 0) {
           FolioService.setSelectedCategories(newValue);
+          filterFolioItemsByCategory(newValue);
         }
       }
     });
@@ -83,6 +88,18 @@
       return function filterFn(_phrase) {
         return (_phrase.indexOf(lowercaseQuery) === 0)
       };
+    }
+
+    function filterFolioItemsByCategory(arr) {
+      console.log('Filter by arr: ', arr);
+      var items = $scope.data.items;
+      angular.forEach(items, function(item, index){
+        var cat = item.category.toLowerCase();
+        console.log('indexOf: ', cat, ' is: ', arr.indexOf(cat));
+        if (arr.indexOf(cat) == -1){
+        //  items.splice(index, 1);
+        }
+      });
     }
 
   }]);
