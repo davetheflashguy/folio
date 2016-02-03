@@ -21,6 +21,7 @@
     var promise = FolioService.getData();
         promise.then(function(data) {
           $scope.data = data;
+          $scope.filteredItems = $scope.data;
           if (JSON.parse(store.get('categories'))) {
             var selectedCategories = JSON.parse(store.get('categories')).selectedCategories;
             FolioService.setSelectedCategories(selectedCategories);
@@ -92,16 +93,15 @@
 
     function filterFolioItemsByCategory(arr) {
       var items = $scope.data.items;
+      $scope.filteredItems = [];
       angular.forEach(items, function(item, index){
         var cat = item.category.toLowerCase();
-        console.log('indexOf: ', cat, ' is: ', arr.indexOf(cat));
-        if (arr.indexOf(cat) == -1){
-          items[index]['removedByFilter'] = true;
-        }
-        else{
-          items[index]['removedByFilter'] = false;
+        if (arr.indexOf(cat) !== -1){
+          $scope.filteredItems.push(items[index]);
         }
       });
+
+      //console.log($scope.filteredItems);
     }
 
   }]);

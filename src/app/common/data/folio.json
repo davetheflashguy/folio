@@ -32,6 +32,127 @@
       "endDate":1406851200,
       "tags":["UI", "UX", "PHP", "mySQL", "JavaScript", "HTML5", "CSS3"],
       "class":"gray"
+    },
+    {
+      "shortName":"t7",
+      "displayName":"Tandem Seven",
+      "sector":"Consulting Services",
+      "category":"Consulting",
+      "logo":"assets/img/logos/t7.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "JavaScript", "HTML5", "CSS3"],
+      "class":"gray"
+    },
+    {
+      "shortName":"123",
+      "displayName":"Snap Studios Plus",
+      "sector":"Consulting Services",
+      "category":"Consulting",
+      "logo":"assets/img/logos/123.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "PHP", "mySQL", "AWS", "JavaScript", "HTML5", "CSS3"],
+      "class":"gray"
+    },
+    {
+      "shortName":"wk",
+      "displayName":"Wolters Kluwer",
+      "sector":"Consulting Services",
+      "category":"Consulting",
+      "logo":"assets/img/logos/wk.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "PHP", "JavaScript", "HTML5", "CSS3"],
+      "class":"gray"
+    },
+    {
+      "shortName":"icims",
+      "displayName":"icims",
+      "sector":"Consulting Services",
+      "category":"Consulting",
+      "logo":"assets/img/logos/icims.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "Java", "JSP", "JavaScript", "HTML5", "CSS3"],
+      "class":"gray"
+    },
+    {
+      "shortName":"verizon",
+      "displayName":"Verizon",
+      "sector":"Consulting Services",
+      "category":"Consulting",
+      "logo":"assets/img/logos/guavus.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "Java", "Flex"],
+      "class":"gray"
+    },
+    {
+      "shortName":"healthination",
+      "displayName":"HealthiNation",
+      "sector":"Consulting Services",
+      "category":"Consulting",
+      "logo":"assets/img/logos/guavus.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "JavaScript", "Flash", "HTML5", "PHP"],
+      "class":"gray"
+    },
+    {
+      "shortName":"iheartradio",
+      "displayName":"Clear Channel Communications",
+      "sector":"Media",
+      "category":"Full Time",
+      "logo":"assets/img/logos/clear-channel.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "JavaScript", "Flash", "Flex", "HTML5", "CSS3", "PHP", "mySQL"],
+      "class":"gray"
+    },
+    {
+      "shortName":"rockstar",
+      "displayName":"Rockstar Games",
+      "sector":"Media",
+      "category":"Full Time",
+      "logo":"assets/img/logos/rockstar-games.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["UI", "UX", "JavaScript", "Flash", "Flex", "HTML5", "CSS3", "PHP", "mySQL"],
+      "class":"gray"
+    },
+    {
+      "shortName":"nba",
+      "displayName":"NBA",
+      "sector":"Media",
+      "category":"Consulting",
+      "logo":"assets/img/logos/nba.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["JavaScript", "Flash", "Flex", "HTML", "CSS", "Java", "JSP", "PHP", "mySQL"],
+      "class":"gray"
+    },
+    {
+      "shortName":"mtv",
+      "displayName":"MTV",
+      "sector":"Media",
+      "category":"Consulting",
+      "logo":"assets/img/logos/mtv.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["JavaScript", "Flash", "Flex"],
+      "class":"gray"
+    },
+    {
+      "shortName":"usace",
+      "displayName":"USACE Army Corps of Engineers",
+      "sector":"Goverment",
+      "category":"Consulting",
+      "logo":"assets/img/logos/usace.png",
+      "startDate":1317427200,
+      "endDate":1406851200,
+      "tags":["JavaScript", "Flash", "HTML", "CSS", "ASP", "mySQL"],
+      "class":"gray"
     }
   ]
 }

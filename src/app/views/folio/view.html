@@ -74,8 +74,7 @@
                 md-row-height="4:3"
                 class="folioGrid">
         <md-grid-tile class="gray"
-                      ng-repeat="item in data.items | orderBy:'-endDate'"
-                      data-isFiltered="{{item.removedByFilter}}">
+                      ng-repeat="item in filteredItems | orderBy:'-endDate'">
             <md-grid-tile-footer>
               <h3>{{item.displayName}}</h3>
             </md-grid-tile-footer>
