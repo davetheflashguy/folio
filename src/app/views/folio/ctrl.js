@@ -91,13 +91,15 @@
     }
 
     function filterFolioItemsByCategory(arr) {
-      console.log('Filter by arr: ', arr);
       var items = $scope.data.items;
       angular.forEach(items, function(item, index){
         var cat = item.category.toLowerCase();
         console.log('indexOf: ', cat, ' is: ', arr.indexOf(cat));
         if (arr.indexOf(cat) == -1){
-        //  items.splice(index, 1);
+          items[index]['removedByFilter'] = true;
+        }
+        else{
+          items[index]['removedByFilter'] = false;
         }
       });
     }

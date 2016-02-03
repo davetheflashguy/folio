@@ -2,7 +2,6 @@
     <div class="md-toolbar-tools">
       <h3>Portfolio</h3>
       <span flex></span>
-      <p>{{selectedCategories}}</p>
       <md-menu>
         <md-button aria-label="Open filters menu" ng-click="openMenu($mdOpenMenu, $event, 'categories')">
           By Category
@@ -75,9 +74,10 @@
                 md-row-height="4:3"
                 class="folioGrid">
         <md-grid-tile class="gray"
-                      ng-repeat="item in data.items | orderBy:'-endDate'">
-          <md-grid-tile-footer>
-            <h3>{{item.displayName}}</h3>
-          </md-grid-tile-footer>
+                      ng-repeat="item in data.items | orderBy:'-endDate'"
+                      data-isFiltered="{{item.removedByFilter}}">
+            <md-grid-tile-footer>
+              <h3>{{item.displayName}}</h3>
+            </md-grid-tile-footer>
         </md-grid-tile>
     </md-grid-list>
