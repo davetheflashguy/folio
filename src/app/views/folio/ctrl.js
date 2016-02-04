@@ -27,6 +27,12 @@
             FolioService.setSelectedCategories(selectedCategories);
             filterFolioItemsByCategory(selectedCategories);
           }
+          if (JSON.parse(store.get('tags'))) {
+            var selectedTags = JSON.parse(store.get('tags')).selectedTags;
+            FolioService.setSelectedTags(selectedTags);
+            filterFolioItemsByTag(selectedTags);
+          }
+
         });
 
     $scope.$watchCollection('selectedCategories', function(newValue, oldValue) {
@@ -48,6 +54,7 @@
       else {
         if (newValue.length > 0) {
           FolioService.setSelectedTags(newValue);
+          filterFolioItemsByTag(newValue);
         }
       }
     });
@@ -100,8 +107,25 @@
           $scope.filteredItems.push(items[index]);
         }
       });
+    }
 
-      //console.log($scope.filteredItems);
+    function filterFolioItemsByTag(arr) {
+      var items = $scope.data.items;
+      $scope.filteredItems = [];
+      angular.forEach(items, function(item, index){
+        var tags = item.tags;
+        console.log('tags: ', tags.length);
+
+        angular.forEach(tags, function(item, index){
+          var tag = item.toLowerCase();
+          console.log('check for tag: ', tag);
+          if (arr.indexOf(tag) !== -1){
+            //$scope.filteredItems.push(items[index]);
+            console.log("Add to array")
+          }
+        });
+
+      });
     }
 
   }]);
