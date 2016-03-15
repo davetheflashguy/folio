@@ -1,26 +1,30 @@
-<div ng-controller="NavigationCtrl as navCtrl" layout="row" layout-align="end center" ng-cloak="" class="fabSpeedDialnavCtrlBasicUsage" ng-app="MyApp">
-  <md-content class="md-padding" layout="column">
-    <div class="lock-size" layout="row" layout-align="left center">
-      <md-fab-speed-dial md-open="navCtrl.isOpen" md-direction="{{navCtrl.selectedDirection}}"
-                         ng-class="navCtrl.selectedMode">
-        <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab md-primary">
-            <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>
-          </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-          <a ui-sref="home">
-            <md-button aria-label="Home" class="md-fab md-raised md-mini">
-              <md-icon><i class="material-icons">home</i></md-icon>
+<div ng-controller="NavigationCtrl as navCtrl">
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Dave Collier - Front End Developer</span>
+        </h2>
+        <span flex></span>
+        <md-fab-speed-dial md-open="navCtrl.isOpen" md-direction="{{navCtrl.selectedDirection}}"
+                           ng-class="navCtrl.selectedMode">
+          <md-fab-trigger>
+            <md-button aria-label="menu" class="md-fab md-accent">
+              <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>
             </md-button>
-          </a>
-          <a ui-sref="folio">
-            <md-button aria-label="Portfolio" class="md-fab md-raised md-mini">
-              <md-icon><i class="material-icons">assignment</i></md-icon>
-            </md-button>
-          </a>
-        </md-fab-actions>
-      </md-fab-speed-dial>
-    </div>
-  </md-content>
+          </md-fab-trigger>
+          <md-fab-actions>
+            <a ui-sref="home">
+              <md-button aria-label="Home" class="md-fab md-raised md-mini">
+                <md-icon><i class="material-icons">home</i></md-icon>
+              </md-button>
+            </a>
+            <a ui-sref="folio">
+              <md-button aria-label="Portfolio" class="md-fab md-raised md-mini">
+                <md-icon><i class="material-icons">assignment</i></md-icon>
+              </md-button>
+            </a>
+          </md-fab-actions>
+        </md-fab-speed-dial>
+      </div>
+    </md-toolbar>
 </div>

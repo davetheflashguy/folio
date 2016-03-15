@@ -25,13 +25,14 @@
           if (JSON.parse(store.get('categories'))) {
             var selectedCategories = JSON.parse(store.get('categories')).selectedCategories;
             FolioService.setSelectedCategories(selectedCategories);
-            filterFolioItemsByCategory(selectedCategories);
+            //filterFolioItemsByCategory(selectedCategories);
           }
           if (JSON.parse(store.get('tags'))) {
             var selectedTags = JSON.parse(store.get('tags')).selectedTags;
             FolioService.setSelectedTags(selectedTags);
-            filterFolioItemsByTag(selectedTags);
+            //filterFolioItemsByTag(selectedTags);
           }
+          filterFolioItemsByTag();
 
         });
 
@@ -120,12 +121,50 @@
           var tag = item.toLowerCase();
           console.log('check for tag: ', tag);
           if (arr.indexOf(tag) !== -1){
-            //$scope.filteredItems.push(items[index]);
+            $scope.filteredItems.push(items[index]);
             console.log("Add to array")
           }
         });
 
       });
+    }
+
+    function filterFolioItemsByTag() {
+      var selectedCategories = JSON.parse(store.get('categories')).selectedCategories;
+      FolioService.setSelectedCategories(selectedCategories);
+
+      var selectedTags = JSON.parse(store.get('tags')).selectedTags;
+      FolioService.setSelectedTags(selectedTags);
+
+      var selectedYears = JSON.parse(store.get('years')).selectedYears;
+
+      var items = $scope.data.items;
+      $scope.filteredItems = [];
+
+      console.log('selectedCategories: ', selectedCategories);
+
+      angular.forEach(items, function(item, index){
+        var cat = item.category.toLowerCase();
+        if (selectedCategories.indexOf(cat) !== -1){
+          $scope.filteredItems.push(items[index]);
+          console.log(cat, ' was found in ', selectedCategories);
+        }
+        /*
+        var tags = item.tags;
+        console.log('tags: ', tags.length);
+
+        angular.forEach(tags, function(item, index){
+          var tag = item.toLowerCase();
+          console.log('check for tag: ', tag, ' in ', selectedTags);
+
+          if (selectedTags.indexOf(tag) !== -1){
+            $scope.filteredItems.push(items[index]);
+            console.log("Add to array")
+          }
+        });
+        */
+      });
+
     }
 
   }]);
