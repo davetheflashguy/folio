@@ -5,26 +5,26 @@
           <span>Dave Collier - Front End Developer</span>
         </h2>
         <span flex></span>
-        <md-fab-speed-dial md-open="navCtrl.isOpen" md-direction="{{navCtrl.selectedDirection}}"
-                           ng-class="navCtrl.selectedMode">
-          <md-fab-trigger>
-            <md-button aria-label="menu" class="md-fab md-accent">
-              <md-icon md-svg-src="assets/icons/menu.svg"></md-icon>
-            </md-button>
-          </md-fab-trigger>
-          <md-fab-actions>
-            <a ui-sref="home">
-              <md-button aria-label="Home" class="md-fab md-raised md-mini">
-                <md-icon><i class="material-icons">home</i></md-icon>
-              </md-button>
-            </a>
-            <a ui-sref="folio">
-              <md-button aria-label="Portfolio" class="md-fab md-raised md-mini">
-                <md-icon><i class="material-icons">assignment</i></md-icon>
-              </md-button>
-            </a>
-          </md-fab-actions>
-        </md-fab-speed-dial>
+        <a ui-sref="home">
+          <md-button aria-label="Home">
+            Home
+          </md-button>
+        </a>
+        <a ui-sref="folio">
+          <md-button aria-label="Folio">
+            Folio
+          </md-button>
+        </a>
+        <a ui-sref="resume">
+          <md-button aria-label="Resume">
+            Resume
+          </md-button>
+        </a>
+        <a ui-sref="contact">
+          <md-button aria-label="Contact">
+            Contact
+          </md-button>
+        </a>
       </div>
     </md-toolbar>
 </div>
