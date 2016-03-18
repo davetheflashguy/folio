@@ -1,0 +1,10 @@
+(function(angular){
+  'use-strict';
+  angular.module('folioApp',[
+    'ngSanitize',
+    'ui.router',
+    'ngMaterial',
+    'folioPartials',
+    'angular-storage'
+  ]);
+})(window.angular);
