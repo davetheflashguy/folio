@@ -12,7 +12,7 @@ const Server = require('karma').Server;
 const gulpIgnore = require('gulp-ignore');
 const changed = require('gulp-changed');
 const argv = require('yargs').argv;
-const ghPages = require('gulp-gh-pages');
+const deploy = require('gulp-gh-pages');
 
 const src = './src/';
 const dest = './build/public/';
@@ -123,10 +123,14 @@ gulp.task('build', ['copy',
                     'uglify',
                    ]);
 
-gulp.task('deploy', function() {
-  return gulp.src('build/public/index.html')
-  .pipe(ghPages());
-});
+var options = {
+                remoteUrl: "https://github.com/davetheflashguy/folio.git",
+                branch: "master"
+              };
 
+gulp.task('deploy', function () {
+    gulp.src("build/**/*.*")
+    .pipe(deploy(options));
+});
 
 gulp.task('serve', ['connect']);
