@@ -1,13 +1,12 @@
 (function (angular) {
   angular.module('folioApp').controller('ContactCtrl', ['$scope', function($scope){
     $scope.user = {
-          name: 'John Doe',
+          name: '',
+          subject: '',
           email: '',
-          phone: '',
-          address: 'Mountain View, CA',
-          donation: 19.99
+          phone: ''
         };
 
-    $scope.availableSujects = ['Saying Hello', 'Job Opportunity', 'Hate Mail'];
+    $scope.availableSubjects = ['Saying Hello', 'Job Opportunity', 'Hate Mail'];
   }]);
 })(window.angular);

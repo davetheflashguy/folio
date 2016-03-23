@@ -1,28 +1,24 @@
 <div>
   <md-content class="md-no-momentum">
-      <md-input-container class="md-icon-float md-block">
-        <label>Name</label>
+    <md-input-container>
+      <label>Subject</label>
+      <md-select ng-model="user.subject">
+        <md-option ng-repeat="subject in availableSubjects" value="{{subject}}">
+          {{subject}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+      <md-input-container class="md-block">
         <md-icon><i class="material-icons">person</i></md-icon>
         <input ng-model="user.name" type="text">
-      </md-input-container>
-      <md-input-container>
-        <label>State</label>
-        <md-select ng-model="user.subject">
-          <md-option ng-repeat="subject in avialableSubjects" value="{{subject}}" ng-disabled="$index === 1">
-            {{subject}}
-          </md-option>
-        </md-select>
-      <md-input-container md-no-float class="md-block">
-        <md-icon><i class="material-icons">phone</i></md-icon>
-        <input ng-model="user.phone" type="text" placeholder="Phone Number">
       </md-input-container>
       <md-input-container class="md-block">
         <md-icon><i class="material-icons">email</i></md-icon>
         <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
       </md-input-container>
       <md-input-container class="md-block">
-          <md-icon><i class="material-icons">message</i></md-icon>
-          <textarea ng-model="user.message" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-        </md-input-container>
+        <md-icon><i class="material-icons">phone</i></md-icon>
+        <input ng-model="user.phone" type="text" placeholder="Phone Number">
+      </md-input-container>
     </md-content>
 </div>
