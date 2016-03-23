@@ -1,5 +1,20 @@
 <div>
-  <md-content flex layout-padding>
-    <h3 class="md-headline">Contact</h3>
+    <md-content class="md-no-momentum">
+      <h3 class="md-headline">Contact</h3>
+      <md-input-container class="md-icon-float md-block">
+        <!-- Use floating label instead of placeholder -->
+        <label>Name</label>
+         <md-icon><i class="material-icons">person</i></md-icon>
+        <input ng-model="user.name" type="text">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <!-- Use floating placeholder instead of label -->
+         <md-icon><i class="material-icons">email</i></md-icon>
+        <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+      </md-input-container>
+      <md-input-container md-no-float class="md-block">
+         <md-icon><i class="material-icons">phone</i></md-icon>
+        <input ng-model="user.phone" type="text" placeholder="Phone Number">
+      </md-input-container>
   </md-content>
 </div>
