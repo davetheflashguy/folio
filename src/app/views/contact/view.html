@@ -1,24 +1,27 @@
 <div>
   <md-content class="md-no-momentum">
-    <md-input-container>
-      <label>Subject</label>
-      <md-select ng-model="user.subject">
-        <md-option ng-repeat="subject in availableSubjects" value="{{subject}}">
-          {{subject}}
-        </md-option>
-      </md-select>
-    </md-input-container>
       <md-input-container class="md-block">
         <md-icon><i class="material-icons">person</i></md-icon>
-        <input ng-model="user.name" type="text">
+        <input ng-model="user.name" type="text" placeholder="Name (required)" ng-required="true">
       </md-input-container>
       <md-input-container class="md-block">
         <md-icon><i class="material-icons">email</i></md-icon>
         <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
       </md-input-container>
+      <md-input-container>
+        <label>Subject</label>
+        <md-select ng-model="user.subject">
+          <md-option ng-repeat="subject in availableSubjects" value="{{subject}}">
+            {{subject}}
+          </md-option>
+        </md-select>
+      </md-input-container>
       <md-input-container class="md-block">
         <md-icon><i class="material-icons">phone</i></md-icon>
         <input ng-model="user.phone" type="text" placeholder="Phone Number">
       </md-input-container>
+      <md-input-container class="md-block">
+          <textarea ng-model="user.message" placeholder="Message" md-maxlength="240" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
     </md-content>
 </div>
