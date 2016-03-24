@@ -1,5 +1,6 @@
 <div>
   <md-content flex layout-padding>
+    <!--
     <md-toolbar class="md-short md-accent">
       <div class="md-toolbar-tools">
         <h3>Portfolio</h3>
@@ -63,6 +64,8 @@
         </md-menu>
       </div>
     </md-toolbar>
+    -->
+    <h3 class="md-headline">Portfolio</h3>
     <md-grid-list md-cols-xs="1"
                   md-cols-gt-xs="1"
                   md-cols-sm="1"
@@ -76,7 +79,7 @@
                   md-row-height="4:3"
                   class="folioGrid">
           <md-grid-tile class="gray"
-                        ng-repeat="item in filteredItems | orderBy:'-endDate' track by $index">
+                        ng-repeat="item in filteredItems">
               <md-grid-tile-footer>
                 <h3>{{item.displayName}}</h3>
               </md-grid-tile-footer>

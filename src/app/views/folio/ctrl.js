@@ -21,18 +21,19 @@
     var promise = FolioService.getData();
         promise.then(function(data) {
           $scope.data = data;
-          $scope.filteredItems = $scope.data;
+          $scope.filteredItems = $scope.data.items;
+          console.log('$scope.filteredItems: ', $scope.filteredItems);
           if (JSON.parse(store.get('categories'))) {
             var selectedCategories = JSON.parse(store.get('categories')).selectedCategories;
-            FolioService.setSelectedCategories(selectedCategories);
+            //FolioService.setSelectedCategories(selectedCategories);
             //filterFolioItemsByCategory(selectedCategories);
           }
           if (JSON.parse(store.get('tags'))) {
             var selectedTags = JSON.parse(store.get('tags')).selectedTags;
-            FolioService.setSelectedTags(selectedTags);
+            //FolioService.setSelectedTags(selectedTags);
             //filterFolioItemsByTag(selectedTags);
           }
-          filterFolioItemsByTag();
+          //filterFolioItemsByTag();
 
         });
 
@@ -42,8 +43,8 @@
       }
       else {
         if (newValue.length > 0) {
-          FolioService.setSelectedCategories(newValue);
-          filterFolioItemsByCategory(newValue);
+          //FolioService.setSelectedCategories(newValue);
+          //filterFolioItemsByCategory(newValue);
         }
       }
     });
@@ -54,8 +55,8 @@
       }
       else {
         if (newValue.length > 0) {
-          FolioService.setSelectedTags(newValue);
-          filterFolioItemsByTag(newValue);
+          //FolioService.setSelectedTags(newValue);
+          //filterFolioItemsByTag(newValue);
         }
       }
     });
@@ -66,7 +67,7 @@
       }
       else {
         if (newValue.length > 0) {
-          FolioService.setSelectedYears(newValue);
+          //FolioService.setSelectedYears(newValue);
         }
       }
     });
