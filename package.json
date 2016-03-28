@@ -1,7 +1,7 @@
 {
-  "devDependencies": {},
-  "dependencies": {
-    "gulp": "~3.9.0",
+  "devDependencies": {
+    "gulp-clean": "~0.3.2",
+    "gulp": "~3.9.1",
     "gulp-copy": "0.0.2",
     "gulp-clean": "~0.3.1",
     "gulp-serve": "~1.2.0",
@@ -26,7 +26,11 @@
     "yargs": "~3.31.0",
     "gulp-if": "~2.0.0",
     "gulp-cssmin": "~0.1.7",
-    "bower": "~1.7.1"
+    "bower": "~1.7.1",
+    "clean": "~4.0.2"
+  },
+  "dependencies": {
+
   },
   "scripts": {
     "build": "gulp buildHeroku",
