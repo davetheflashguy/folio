@@ -12,6 +12,8 @@ const Server = require('karma').Server;
 const gulpIgnore = require('gulp-ignore');
 const changed = require('gulp-changed');
 const argv = require('yargs').argv;
+const usemin = require('gulp-usemin');
+const rev = require('gulp-rev');
 
 const src = './src/';
 const dest = './build/public/';
@@ -21,6 +23,16 @@ gulp.task('test', function (done) {
     configFile: require('path').resolve('karma.conf.js'),
     singleRun: true
   }, done).start();
+});
+
+gulp.task('usemin', function() {
+  return gulp.src(src + 'index.html')
+  .pipe(usemin({
+        css: [ rev() ],
+        html: [ minifyHtml({ empty: true }) ],
+        js: [ uglify(), rev() ]
+      }))
+    .pipe(gulp.dest(dest));
 });
 
 gulp.task('uglify', ['clean'], function() {
@@ -113,6 +125,7 @@ gulp.task('buildHeroku', ['copy',
                     'less',
                     'ngHtml2Js',
                     'uglify',
+                    'usemin',
                     'serve'
                    ]);
 
@@ -120,6 +133,7 @@ gulp.task('build', ['copy',
                     'less',
                     'ngHtml2Js',
                     'uglify',
+                    'usemin'
                    ]);
 
 gulp.task('serve', ['connect']);
