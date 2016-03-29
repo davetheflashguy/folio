@@ -1,0 +1,93 @@
+{
+  "intro": [
+    {
+      "item":"Dave Collier"
+    },
+    {
+      "item":"Front End Developer"
+    },
+    {
+      "item":"Union, NJ"
+    },
+    {
+      "item":"davetheflashguy@gmail.com"
+    },
+    {
+      "item": "http://davecollier.io"
+    }
+  ],
+  "summary":[
+    {
+      "item":"Total 12+ Years of Web Development Experience"
+    },
+    {
+      "item":"Experience in all stages of application development life cycle from conception to completion"
+    },
+    {
+      "item":"Strong track record of translating business requirements into technical solutions"
+    },
+    {
+      "item":"Leader with strong programming and analytical skills"
+    },
+    {
+      "item":"Ability to work well in both a team environment and individual/remote environments"
+    },
+    {
+      "item":"Excellent written and verbal communication skills"
+    }
+
+  ],
+  "experience" : [
+    {
+      "company" : "Barclays",
+      "sector" : "Investment Banking",
+      "title" : "UI Architect / Development Lead",
+      "startDate" : "Dec. 2014",
+      "endDate" : "Present",
+      "description" : "Architect, build and deploy front end applications with a focus on Angular, HTML5 and CSS3.",
+      "accomplishments" : [
+        {
+          "accomplishment" : "Responsible for choosing technology stack, hiring of development team and vendor management"
+        },
+        {
+          "accomplishment" : "Responsible for deploying applications"
+        }
+      ]
+    },
+    {
+      "company" : "Thomson Reuters",
+      "sector" : "Tax & Accounting",
+      "title" : "Senior UI Developer",
+      "startDate" : "Sep. 2014",
+      "endDate" : "Dec. 2014",
+      "description" : "Working on a central user experience team, I assist in building and maintaining advanced Angular directives for a community of internal software developers.",
+      "accomplishments" : [
+        {
+          "accomplishment" : "Responsible for platform upgrades"
+        },
+        {
+          "accomplishment" : "Prototype components using various JavaScript libraries"
+        },
+        {
+          "accomplishment" : "Work very closely with UX and visual designers to create pixel perfect cross browser experiences"
+        }
+      ]
+    },
+    {
+      "company" : "Dave Collier Consulting",
+      "sector" : "",
+      "title" : "Owner",
+      "startDate" : "Oct. 2011",
+      "endDate" : "Sep. 2014",
+      "description" : "Worked as an independent consulting creating cutting edge user interfaces using modern JavaScript, HTML5 and CSS3."
+    },
+    {
+      "company" : "Clear Channel Communications",
+      "sector" : "iHeartradio",
+      "title" : "Manager Front End",
+      "startDate" : "July 2009",
+      "endDate" : "Oct 2011",
+      "description" : "Manager all front end development under the on a national (iheartradio) and local (local stations) umbrella"
+    }
+  ]
+}

@@ -1,5 +1,47 @@
 <div>
   <md-content flex layout-padding>
     <h3 class="md-headline">Resume</h3>
+    <div class="intro">
+      <md-list flex>
+        <md-subheader class="md-no-sticky">Intro</md-subheader>
+        <md-list-item class="md-1-line" ng-repeat="s in intro">
+          <div class="md-list-item-text">
+            <p>{{s.item}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </div>
+    <div class="summary">
+      <md-list flex>
+        <md-subheader class="md-no-sticky">Summary</md-subheader>
+        <md-list-item class="md-1-line" ng-repeat="s in summary">
+          <div class="md-list-item-text">
+            <p>{{s.item}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+      <md-divider></md-divider>
+    </div>
+    <div class="experience">
+      <md-list flex>
+        <md-subheader class="md-no-sticky">Experience</md-subheader>
+        <md-list-item class="md-1-line" ng-repeat="s in experience">
+          <div class="md-list-item-text">
+            <p>{{s.company}} ({{s.sector}})</p>
+            <p>{{s.title}}</p>
+            <p>{{s.startDate}} - {{s.endDate}}</p>
+            <p>{{s.description}}</p>
+            <md-list flex>
+              <md-list-item class="md-1-line" ng-repeat="accomplishment in s.accomplishments">
+                <div class="md-list-item-text">
+                  <p>{{accomplishment.accomplishment}}</p>
+                </div>
+              </md-list-item>
+            </md-list>
+          </div>
+        </md-list-item>
+      </md-list>
+      <md-divider></md-divider>
+    </div>
   </md-content>
 </div>
