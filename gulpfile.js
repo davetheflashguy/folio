@@ -132,8 +132,8 @@ gulp.task('buildHeroku', ['copy',
 gulp.task('build', ['copy',
                     'less',
                     'ngHtml2Js',
-                    'uglify',
-                    'usemin'
+                    'uglify'/*,
+                    'usemin'*/
                    ]);
 
 gulp.task('serve', ['connect']);
